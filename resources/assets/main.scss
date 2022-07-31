@@ -1,0 +1,26 @@
+.main-content__container {
+  display: flex;
+  gap: 5rem;
+}
+
+.sidebar__container {
+  flex: 15%;
+}
+
+.content__container {
+  flex: 85%
+}
+
+.side-bar-list a {
+  width: 100%;
+  padding: 0.5rem 0rem;
+}
+
+.side-bar__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@import './my_snippets.scss';
+@import './my_snippets_create.scss';

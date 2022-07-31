@@ -6,6 +6,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: 'resources/js/app.jsx',
+            my_snippets: 'resources/assets/main.scss',
             ssr: 'resources/js/ssr.jsx',
             refresh: true,
         }),
