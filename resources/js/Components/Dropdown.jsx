@@ -77,14 +77,32 @@ const DropdownLink = ({ href, method = 'post', as = 'a', children }) => {
             method={method}
             as={as}
             className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+            style={{
+                cursor: 'pointer'
+            }}
         >
             {children}
         </Link>
     );
 };
 
+const DropdownSelect = ({ children }) => {
+    return (
+        <p
+            className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out pointer"
+            style={{
+                cursor: 'pointer'
+            }}
+        >
+            {children}
+        </p>
+    );
+};
+
+
 Dropdown.Trigger = Trigger;
 Dropdown.Content = Content;
 Dropdown.Link = DropdownLink;
+Dropdown.Select = DropdownSelect;
 
 export default Dropdown;

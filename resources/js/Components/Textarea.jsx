@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function Input({
-    type = 'text',
+export default function Textarea({
+    cols,
+    rows,
     name,
     value,
     className,
@@ -21,9 +22,8 @@ export default function Input({
 
     return (
         <div className="flex flex-col items-start">
-            <input
+            <textarea
                 id={id}
-                type={type}
                 name={name}
                 value={value}
                 className={
@@ -34,6 +34,8 @@ export default function Input({
                 autoComplete={autoComplete}
                 required={required}
                 onChange={(e) => handleChange(e)}
+                rows={rows}
+                cols={cols}
             />
         </div>
     );

@@ -1,0 +1,45 @@
+#MySnippetsCreate {
+
+  form {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .add-snippet__container {
+    background: #fff;
+    padding: 1.5rem;
+    flex: 0 0 65%;
+
+    .add-snippet__header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    select {
+      background: none;
+      padding: 0.2rem 1rem;
+    }
+  }
+
+  .form-inputs__container {
+    background-color: #fff;
+    padding: 1.5rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(35% - 1rem);
+
+    input, textarea {
+      width: 100%;
+    }
+
+    button {
+      float: right;
+    }
+
+  }
+  
+}

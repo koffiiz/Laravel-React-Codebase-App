@@ -1,0 +1,21 @@
+#MySnippets {
+
+  .snip-list__container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .snip-list {
+    padding: 1.5rem;
+    height: fit-content;
+  }
+
+  .snip-header__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+}
