@@ -24,6 +24,6 @@ export default function CodeBadge({
     }
 
     return (
-      <span class={`${badgeColor} text-white py-1 px-4 rounded-full text-xs font-bold`}> {children} </span>
+      <span className={`${badgeColor} text-white py-1 px-4 rounded-full text-xs font-bold`}> {children} </span>
     );
 }

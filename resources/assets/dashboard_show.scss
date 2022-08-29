@@ -1,0 +1,39 @@
+#DashboardShow {
+  .my-snippet-card  {
+    padding: 1.5rem;
+    border-radius: 5px;
+  }
+
+  .my-snippet-header__wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+  }
+
+  .my-snippet-details {
+    margin-top: 1rem;
+  }
+
+  .my-snippet-heading span {
+    margin-left: 1rem;
+  }
+  
+  .my-snippet-title__wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .snip-author__wrapper {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 12px;
+    color: #787878;
+  }
+
+  .my-snippet-copy-clipboard {
+    cursor: pointer;
+  }
+
+}
+

@@ -73,9 +73,11 @@ class MySnippetsController extends Controller
      * @param  \App\Models\MySnippets  $mySnippets
      * @return \Illuminate\Http\Response
      */
-    public function show(MySnippets $mySnippets)
+    public function show(Request $request)
     {
-        //
+        $user = Auth::user();
+        $mySnippets= $user->mySnippets()->where('slug', $request->slug)->first();
+        return Inertia::render('MySnippets/Show', ['my_snippet' => $mySnippets]);
     }
 
     /**
