@@ -4,6 +4,7 @@ import { Head, usePage } from '@inertiajs/inertia-react';
 import CodeBadge from '@/Components/CodeBadge';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { codepenEmbed } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const DashboardShow = (props) => {
 
@@ -24,11 +25,18 @@ const DashboardShow = (props) => {
     <div className='my-snippet-card bg-white shadow'>
 
         <div className='my-snippet-header__wrapper'>
-          <h2 className='font-semibold text-l text-gray-800'> {my_snippet.title} </h2>
-          <CodeBadge
-            code={my_snippet.language_code}
-            > { my_snippet.language_code } 
-          </CodeBadge>
+          <div className='my-snippet-title__wrapper'>
+            <h2 className='font-semibold text-l text-gray-800'> {my_snippet.title} </h2>
+            <CodeBadge
+              code={my_snippet.language_code}
+              > { my_snippet.language_code } 
+            </CodeBadge>
+          </div>
+          <div className='my-snippet-copy-clipboard'>
+            <CopyToClipboard text={my_snippet.code_snippet}>
+              <span>Copy to clipboard</span>
+            </CopyToClipboard>
+          </div>
         </div>
 
         <SyntaxHighlighter
@@ -42,6 +50,12 @@ const DashboardShow = (props) => {
         <div className='my-snippet-details'>
           {my_snippet.description}
         </div>
+
+        <div className='snip-author__wrapper'>
+            <span className='snip-author'> 
+              <label>Author: {my_snippet.user.name}</label>
+            </span>
+        </div>
     </div>
   )
 
@@ -53,7 +67,7 @@ const DashboardShow = (props) => {
     >
       <Head title="My Snippets Show" />
 
-      <div id="MySnippetsShow">
+      <div id="DashboardShow">
         {mySnippetCard}
       </div>
     </Authenticated>
