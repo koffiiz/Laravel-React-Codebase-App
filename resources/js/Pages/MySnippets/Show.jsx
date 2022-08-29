@@ -4,6 +4,7 @@ import { Head, usePage } from '@inertiajs/inertia-react';
 import CodeBadge from '@/Components/CodeBadge';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { codepenEmbed } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const MySnippetEdit = (props) => {
 
@@ -24,11 +25,18 @@ const MySnippetEdit = (props) => {
     <div className='my-snippet-card bg-white shadow'>
 
         <div className='my-snippet-header__wrapper'>
+        <div className='my-snippet-title__wrapper'>
           <h2 className='font-semibold text-l text-gray-800'> {my_snippet.title} </h2>
           <CodeBadge
             code={my_snippet.language_code}
             > { my_snippet.language_code } 
           </CodeBadge>
+          </div>
+          <div className='my-snippet-copy-clipboard'>
+            <CopyToClipboard text={my_snippet.code_snippet}>
+              <span>Copy to clipboard</span>
+            </CopyToClipboard>
+          </div>
         </div>
 
         <SyntaxHighlighter

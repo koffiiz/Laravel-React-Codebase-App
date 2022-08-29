@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use App\Models\User;
 
 class MySnippets extends Model
@@ -17,7 +18,8 @@ class MySnippets extends Model
         'description',
         'code_snippet',
         'language',
-        'language_code'
+        'language_code',
+        'slug',
     ];
 
 
@@ -36,7 +38,7 @@ class MySnippets extends Model
         parent::boot();
 
         static::saving(function ($model) {
-            $model->slug = str_slug($model->title);
+            $model->slug = Str::slug($model->title);
         });
     }
 
