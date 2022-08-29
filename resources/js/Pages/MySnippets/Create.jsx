@@ -115,6 +115,7 @@ const MySnippetCreate = (props) => {
     <Authenticated
         auth={props.auth}
         errors={props.errors}
+        isMySnippet={true}
         header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Add Snipp</h2>}
     >
       <Head title="My Snippets Create" />

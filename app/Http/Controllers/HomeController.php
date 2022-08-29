@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Models\MySnippets;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -26,7 +27,24 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return Inertia::render('Dashboard');
+        $snippetList = MySnippets::with(['user'])->get();
+
+        return Inertia::render('Dashboard', [
+            'snippet_list' => $snippetList
+        ]);
+
+    }
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\MySnippets  $mySnippets
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Request $request) {
+        $showSnippet=  MySnippets::with(['user'])->where('slug', $request->slug)->first();
+
+        return Inertia::render('Dashboard/Show', ['my_snippet' => $showSnippet]);
     }
 
 }

@@ -5,10 +5,11 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
 import SideBar from '@/Pages/MySnippets/SideBar';
+import DashboardSideBar from '@/Pages/Dashboard/Sidebar';
 
-export default function Authenticated({ auth, header, children }) {
+export default function Authenticated({ auth, header, children, isMySnippet }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
-
+    console.log(route().current('all-snip/{slug}'));
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-white border-b border-gray-100">
@@ -122,11 +123,15 @@ export default function Authenticated({ auth, header, children }) {
             )}
 
             <main className="max-w-full mx-auto py-6 px-4 sm:px-6 lg:px-8 main-content__container">
-                    {
-                        !route().current('dashboard') && 
+                    {   
+                        isMySnippet ?
                         (
                             <div className='sidebar__container'>
                                 <SideBar />
+                            </div>
+                        ):(
+                            <div className='sidebar__container'>
+                                <DashboardSideBar />
                             </div>
                         )
                     }

@@ -9,12 +9,15 @@ Route::controller(HomeController::class)->group(function () {
     Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
     });
+
+    Route::get('/all-snip/{slug}', 'show')->name('dashboard.show');
    
 });
 
 Route::controller(MySnippetsController::class)->middleware(['auth', 'verified'])->group(function () { 
     Route::get('/my-snippets', 'index')->name('my-snippets');
     Route::get('/my-snippets/create', 'create' )->name('my-snippets.create');
+    Route::get('/my-snippets/{slug}', 'show' )->name('my-snippets.show');
     Route::post('/my-snippets/store', 'store' )->name('my-snippets.store');
 });
 

@@ -1,5 +1,4 @@
-#MySnippets {
-
+#Dashboard {
   .snip-list__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -10,6 +9,8 @@
     padding: 1.5rem;
     height: 100%;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
   }
 
   .snip-header__wrapper {
@@ -26,5 +27,20 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-size: 14px;
+  }
+
+
+  .snip-author__wrapper {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 12px;
+    color: #787878;
+  }
+
+  .snipList--heading {
+    font-size: 32px;
+    margin-bottom: 1rem;
+    color: #787878;
+    font-weight: 600;
   }
 }

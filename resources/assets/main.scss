@@ -29,7 +29,7 @@
   top: 0;
   background-color: transparent;
   left: 8rem;
-  
+
   .index__heading {
     -webkit-text-stroke: 1px white;
     -webkit-text-fill-color: transparent;
@@ -54,9 +54,10 @@
 
   .index__subheading {
     margin-top: 1rem;
+  }
 }
-}
-
 
 @import './my_snippets.scss';
 @import './my_snippets_create.scss';
+@import './my_snippets_show.scss';
+@import './dashboard.scss';

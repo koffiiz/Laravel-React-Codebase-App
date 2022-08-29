@@ -1,0 +1,21 @@
+#MySnippetsShow {
+  .my-snippet-card  {
+    padding: 1.5rem;
+    border-radius: 5px;
+  }
+
+  .my-snippet-header__wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .my-snippet-details {
+    margin-top: 1rem;
+  }
+
+}
+
+.my-snippet-heading span {
+  margin-left: 1rem;
+}
