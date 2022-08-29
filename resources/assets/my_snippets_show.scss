@@ -8,10 +8,16 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
+    justify-content: space-between;
   }
 
   .my-snippet-details {
     margin-top: 1rem;
+  }
+
+  .my-snippet-title__wrapper {
+    display: flex;
+    gap: 1rem;
   }
 
 }

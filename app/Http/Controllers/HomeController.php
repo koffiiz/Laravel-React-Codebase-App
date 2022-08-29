@@ -27,7 +27,7 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $snippetList = MySnippets::with(['user'])->get();
+        $snippetList = MySnippets::with(['user'])->latest()->get();
 
         return Inertia::render('Dashboard', [
             'snippet_list' => $snippetList
